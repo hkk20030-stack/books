@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إضافة كتاب جديد - كتابي</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="logo">
+      <img src="../images/logo.png" alt="شعار كتابي">
+      <h1>كتابي</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">الرئيسية</a></li>
+        <!-- لو عندك صفحة PHP للكتب خليه books.php -->
+        <li><a href="books.html">الكتب</a></li>
+        <!-- الأفضل تكون add-book.php لو فيها PHP لجلسة تسجيل الدخول -->
+        <li><a href="add-book.html" class="active">إضافة كتاب</a></li>
+        <li><a href="cart.html">سلة التسوق</a></li>
+        <li><a href="#" id="userMenu">تسجيل الدخول</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="add-book-page container">
+    <div class="page-header">
+      <h1>إضافة كتاب جديد</h1>
+      <p>شارك كتابك المستعمل مع المجتمع</p>
+    </div>
+
+    <div class="add-book-container">
+      <!-- أهم شيء هنا: action + method + enctype -->
+      <form class="add-book-form" id="addBookForm"
+            >
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="title">عنوان الكتاب *</label>
+            <input type="text" id="title" name="title" required>
+          </div>
+
+          <div class="form-group">
+            <label for="author">المؤلف *</label>
+            <input type="text" id="author" name="author" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="price">السعر (ريال) *</label>
+            <input type="number" id="price" name="price" step="0.01" min="0" required>
+          </div>
+
+          <div class="form-group">
+            <label for="category">الفئة *</label>
+            <select id="category" name="category" required>
+              <option value="">اختر الفئة</option>
+              <option value="روايات">روايات</option>
+              <option value="تنمية بشرية">تنمية بشرية</option>
+              <option value="كتب أطفال">كتب أطفال</option>
+              <option value="كتب تاريخ">كتب تاريخ</option>
+              <option value="خيال علمي">خيال علمي</option>
+              <option value="كلاسيكيات">كلاسيكيات</option>
+              <option value="روايات مترجمة">روايات مترجمة</option>
+              <option value="روايات تاريخية">روايات تاريخية</option>
+              <option value="كتب دينية">كتب دينية</option>
+              <option value="كتب تعليمية">كتب تعليمية</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="description">وصف الكتاب</label>
+          <textarea id="description" name="description" rows="4"
+                    placeholder="اكتب وصفاً مختصراً عن الكتاب وحالته..."></textarea>
+        </div>
+
+        <!-- تصحيح: ملف صورة فقط، name يجب أن يكون book_image -->
+        <div class="form-group">
+          <label for="book_image">صورة الكتاب (ملف) *</label>
+          <input type="file" id="book_image" name="book_image" accept="image/*" required>
+          <!-- معاينة الصورة -->
+          <div class="image-preview" id="imagePreview" style="display:none;">
+            <img id="previewImg" alt="معاينة الصورة" style="max-width:200px;border-radius:8px;">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="stock_quantity">الكمية المتاحة</label>
+          <input type="number" id="stock_quantity" name="stock_quantity" min="1" value="1">
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">إضافة الكتاب</button>
+          <button type="reset" class="btn-secondary" id="resetBtn">إعادة تعيين</button>
+        </div>
+      </form>
+
+      <div class="add-book-tips">
+        <h3>نصائح لإضافة كتاب ناجحة:</h3>
+        <ul>
+          <li>تأكد من كتابة عنوان الكتاب واسم المؤلف بشكل صحيح</li>
+          <li>حدد سعراً عادلاً يعكس حالة الكتاب</li>
+          <li>اكتب وصفاً واضحاً عن حالة الكتاب</li>
+          <li>أضف صورة واضحة للكتاب</li>
+          <li>اختر الفئة المناسبة لتسهيل العثور على الكتاب</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2025 كتابي. جميع الحقوق محفوظة.</p>
+  </div>
+</footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/add-book.js"></script>
+</body>
+</html>

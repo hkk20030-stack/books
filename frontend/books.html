@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الكتب - كتابي</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="../images/logo.png" alt="شعار كتابي">
+                <h1>كتابي</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="books.html" class="active">الكتب</a></li>
+                    <li><a href="add-book.html">إضافة كتاب</a></li>
+                    <li><a href="cart.html">سلة التسوق</a></li>
+                    <li><a href="#" id="userMenu">تسجيل الدخول</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="ابحث عن كتاب...">
+                <button onclick="searchBooks()">بحث</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="books-page container">
+            <div class="page-header">
+                <h1>جميع الكتب</h1>
+                <p>اكتشف مجموعتنا الواسعة من الكتب المستعملة بأسعار رمزية</p>
+            </div>
+
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="categoryFilter">الفئة:</label>
+                    <select id="categoryFilter" onchange="filterBooks()">
+                        <option value="">جميع الفئات</option>
+                        <option value="روايات">روايات</option>
+                        <option value="تنمية بشرية">تنمية بشرية</option>
+                        <option value="كتب أطفال">كتب أطفال</option>
+                        <option value="كتب تاريخ">كتب تاريخ</option>
+                        <option value="خيال علمي">خيال علمي</option>
+                        <option value="كلاسيكيات">كلاسيكيات</option>
+                        <option value="روايات مترجمة">روايات مترجمة</option>
+                        <option value="كتب دينية">كتب دينية</option>
+                        <option value="كتب تعليمية">كتب تعليمية</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="sortBy">ترتيب حسب:</label>
+                    <select id="sortBy" onchange="sortBooks()">
+                        <option value="newest">الأحدث</option>
+                        <option value="price_low">السعر: من الأقل للأعلى</option>
+                        <option value="price_high">السعر: من الأعلى للأقل</option>
+                        <option value="title">العنوان</option>
+                        <option value="author">المؤلف</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="books-grid" id="booksGrid">
+                <!-- سيتم تحميل الكتب هنا بواسطة JavaScript -->
+            </div>
+
+            <div class="loading" id="loading" style="display: none;">
+                <p>جاري تحميل الكتب...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 كتابي. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/books.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
