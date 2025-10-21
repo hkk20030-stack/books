@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كتابي - لبيع الكتب المستعملة</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="../images/logo.png" alt="شعار كتابي">
+                <h1>كتابي</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="books.html">الكتب</a></li>
+                    <li><a href="add-book.html">إضافة كتاب</a></li>
+                    <li><a href="cart.html">سلة التسوق</a></li>
+                    <li><a href="#" id="userMenu">تسجيل الدخول</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="ابحث عن كتاب...">
+                <button onclick="searchBooks()">بحث</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container">
+                <h2>اكتشف كنوز الكتب المستعملة بأسعار رمزية</h2>
+                <p>ابحث عن كتبك المفضلة وادعم القراءة المستدامة.</p>
+                <a href="books.html" class="btn">تصفح الكتب</a>
+            </div>
+        </section>
+
+        <section id="featured-books" class="container">
+            <h2>كتب مميزة</h2>
+            <div class="book-list" id="featuredBooksList">
+                <!-- سيتم تحميل الكتب هنا بواسطة JavaScript -->
+            </div>
+        </section>
+
+        <section id="categories" class="container">
+            <h2>تصفح حسب الفئة</h2>
+            <div class="categories-grid">
+                <div class="category-card" onclick="filterByCategory('روايات')">
+                    <h3>روايات</h3>
+                    <p>اكتشف أجمل الروايات العربية والمترجمة</p>
+                </div>
+                <div class="category-card" onclick="filterByCategory('تنمية بشرية')">
+                    <h3>تنمية بشرية</h3>
+                    <p>كتب لتطوير الذات والشخصية</p>
+                </div>
+                <div class="category-card" onclick="filterByCategory('كتب أطفال')">
+                    <h3>كتب أطفال</h3>
+                    <p>كتب تعليمية وترفيهية للأطفال</p>
+                </div>
+                <div class="category-card" onclick="filterByCategory('كتب تاريخ')">
+                    <h3>كتب تاريخ</h3>
+                    <p>استكشف التاريخ والحضارات</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 كتابي. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/books.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
